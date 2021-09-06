@@ -13,10 +13,10 @@
 
 ## Usage
 background operation
-> ./localfuse $MOUNT_POINT
+> localfuse $MOUNT_POINT
 
 foreground operation
-> ./localfuse -f $MOUNT_POINT
+> localfuse -f $MOUNT_POINT
 
 ## Function
 
