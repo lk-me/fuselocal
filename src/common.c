@@ -1,13 +1,5 @@
 #include "common.h"
-
-#include <openssl/md5.h>
-#include <uuid/uuid.h>
-
-#include <execinfo.h>
-#include <unistd.h>
 #include <stdlib.h>
-#include <string.h>
-#include <errno.h>
 
 /**
  * \brief Backtrace buffer size

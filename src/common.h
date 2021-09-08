@@ -2,6 +2,9 @@
 #include <stddef.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <execinfo.h>
+#include <unistd.h>
+
 
 #define MAX_FILENAME_LEN    255
 #define MAX_PATH_LEN        4096
