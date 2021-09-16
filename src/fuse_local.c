@@ -99,12 +99,12 @@ static int fs_readdir(const char *path, void *buf, fuse_fill_dir_t dir_add,
     (void) offset;
     (void) fi;
     LinkTable *linktbl = NULL;
-    Link *link;
-    Link *pLink = LinkTable_exist(ROOT_LINK_TBL, path);
+
+    Link *pLinkTab = LinkTable_exist(ROOT_LINK_TBL, path);
     if (!strcmp(path, "/")) {
         linktbl = ROOT_LINK_TBL;
-    }else if(pLink->next_table != NULL) {
-        linktbl = pLink->next_table;
+    }else if(pLinkTab->next_table != NULL) {
+        linktbl = pLinkTab->next_table;
     }
     /* start adding the links */
     dir_add(buf, ".", NULL, 0);
@@ -112,7 +112,7 @@ static int fs_readdir(const char *path, void *buf, fuse_fill_dir_t dir_add,
     if(NULL != linktbl) {
         printf("int nNum = %d\n", linktbl->num);
     }
-
+    Link *link = NULL;
     for (int i = 0; linktbl != NULL &&i < linktbl->num; i++) {
         link = linktbl->links[i];
         if (link->type != LINK_INVALID) {

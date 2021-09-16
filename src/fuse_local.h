@@ -9,6 +9,4 @@
 /* Initialise fuse */
 int fuse_local_init(int argc, char **argv);
 
-
-
 #endif
